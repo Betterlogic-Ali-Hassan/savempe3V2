@@ -82,15 +82,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-/* .header::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 24px;
-  height: 4px;
-  width: 90px;
-  background-color: #fff;
-  transition: transform 0.5s ease, width 0.5s ease;
-  left: 0;
-} */

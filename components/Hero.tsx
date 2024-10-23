@@ -13,17 +13,17 @@ const Hero = () => {
 
   return (
     <div className=' pb-[90px] pt-[40px]'>
-      <div className=' min-[1440px]:max-w-[1248px] max-w-[904px] mx-auto px-4 '>
-        <div className='min-[1440px]:ml-[80px] py-[55px]'>
+      <div className=' flex flex-col items-center justify-center px-6'>
+        <div className=' py-[55px] flex flex-col items-center justify-center'>
           <h1 className='min-[1440px]:text-[96px] text-[56px] font-bold text-[#D10210] pb-[7px] text-center leading-[110%] tracking-[-0.5px]'>
             Have questions?
           </h1>
-          <p className='min-[1440px]:text-[32px] text-2xl mt-[17px] text-center leading-[120%]'>
+          <p className='min-[1440px]:text-[32px] text-2xl mt-[17px] text-center leading-[120%] w-[70%] max-[1440px]:w-[75%]'>
             We have made it easy to get the support you need by putting together
             the most common queries we receive in one place
           </p>
         </div>
-        <div className='bg-white h-[100px] min-[1440px]:h-[114px] flex items-center w-full border border-[#c4c4c4] px-6 py-3 rounded-[20px] min-[1440px]:ml-[80px] '>
+        <div className='bg-white max-w-[1248px] h-[100px] min-[1440px]:h-[114px] flex items-center w-full border border-[#c4c4c4] px-6 py-3 rounded-[20px]  '>
           <HiSearch size={48} className='mr-6 text-[#384048]' />
           <Input
             className='bg-transparent border-none outline-none shadow-none min-[1440px]:text-[32px] text-2xl font-normal h-full '
