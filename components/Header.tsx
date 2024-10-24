@@ -1,24 +1,76 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
 import { HiSearch } from "react-icons/hi";
 import { MdOutlineLockPerson } from "react-icons/md";
 
 const Header = () => {
-  const [hovered, setHovered] = useState("personal");
+  const [hovered, setHovered] = useState("personal"); // Active by default
+  const [underlineStyle, setUnderlineStyle] = useState({
+    width: "0px",
+    left: "0px",
+  });
+  const navRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMouseEnter = (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    e: any,
+    section: React.SetStateAction<string>
+  ) => {
+    setHovered(section);
+
+    if (navRef.current) {
+      const navRect = navRef.current.getBoundingClientRect();
+      const linkRect = e.target.getBoundingClientRect();
+
+      const width = linkRect.width;
+      const left = linkRect.left - navRect.left;
+
+      setUnderlineStyle({ width: `${width}px`, left: `${left}px` });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const defaultElement = document.querySelector(`a[data-section="personal"]`);
+    if (defaultElement && navRef.current) {
+      const navRect = navRef.current.getBoundingClientRect();
+      const linkRect = defaultElement.getBoundingClientRect();
+
+      setUnderlineStyle({
+        width: `${linkRect.width}px`,
+        left: `${linkRect.left - navRect.left}px`,
+      });
+    }
+  };
+
+  useEffect(() => {
+    const defaultElement = document.querySelector(`a[data-section="personal"]`);
+    if (defaultElement && navRef.current) {
+      const navRect = navRef.current.getBoundingClientRect();
+      const linkRect = defaultElement.getBoundingClientRect();
+
+      setUnderlineStyle({
+        width: `${linkRect.width}px`,
+        left: `${linkRect.left - navRect.left}px`,
+      });
+    }
+  }, []);
 
   return (
     <header className='bg-black min-h-[100px] text-white flex items-center justify-between px-6'>
       <Logo />
-      <nav className='relative'>
+      <nav ref={navRef} className='relative'>
         <ul className='flex items-center text-2xl font-bold relative'>
           <li className='mr-4'>
             <a
               href='#'
-              className={`pb-1 relative ${
-                hovered === "personal" ? "text-white" : "opacity-50"
+              data-section='personal'
+              className={`pb-1 relative text-white  ${
+                hovered === "personal" ? "text-white" : ""
               } transition-all duration-500`}
+              onMouseEnter={(e) => handleMouseEnter(e, "personal")}
+              onMouseLeave={handleMouseLeave}
             >
               Personal
             </a>
@@ -26,11 +78,12 @@ const Header = () => {
           <li className='mr-4'>
             <a
               href='#'
-              className={`pb-1 relative ${
-                hovered === "business" ? "text-white" : "opacity-50"
+              data-section='business'
+              className={`pb-1 relative hover:opacity-100 opacity-50 ${
+                hovered === "business" ? "text-white" : ""
               } transition-all duration-500`}
-              onMouseEnter={() => setHovered("business")}
-              onMouseLeave={() => setHovered("personal")}
+              onMouseEnter={(e) => handleMouseEnter(e, "business")}
+              onMouseLeave={handleMouseLeave}
             >
               Business
             </a>
@@ -38,11 +91,12 @@ const Header = () => {
           <li className='mr-4'>
             <a
               href='#'
-              className={`pb-1 relative ${
-                hovered === "wholesale" ? "text-white" : "opacity-50"
+              data-section='wholesale'
+              className={`pb-1 relative hover:opacity-100 opacity-50 ${
+                hovered === "wholesale" ? "text-white" : ""
               } transition-all duration-500`}
-              onMouseEnter={() => setHovered("wholesale")}
-              onMouseLeave={() => setHovered("personal")}
+              onMouseEnter={(e) => handleMouseEnter(e, "wholesale")}
+              onMouseLeave={handleMouseLeave}
             >
               Wholesale
             </a>
@@ -50,48 +104,40 @@ const Header = () => {
           <li>
             <a
               href='#'
-              className={`pb-1 relative ${
-                hovered === "help" ? "text-white" : "opacity-50"
+              data-section='help'
+              className={`pb-1 relative hover:opacity-100 opacity-50 ${
+                hovered === "help" ? "text-white" : ""
               } transition-all duration-500`}
-              onMouseEnter={() => setHovered("help")}
-              onMouseLeave={() => setHovered("personal")}
+              onMouseEnter={(e) => handleMouseEnter(e, "help")}
+              onMouseLeave={handleMouseLeave}
             >
               Help Centre
             </a>
           </li>
         </ul>
 
-        {/* Underline */}
+        {/* Dynamic Underline */}
         <div
-          className={`absolute bottom-0 left-0 h-[4px] bg-white transition-all duration-500`}
+          className={`absolute bottom-0 h-[4px] bg-white transition-all duration-500`}
           style={{
-            width:
-              hovered === "personal"
-                ? "90px"
-                : hovered === "business"
-                ? "92px"
-                : hovered === "wholesale"
-                ? "105px"
-                : "120px",
-            transform:
-              hovered === "personal"
-                ? "translateX(0) "
-                : hovered === "business"
-                ? "translateX(108px) " // Adjust spacing
-                : hovered === "wholesale"
-                ? "translateX(215px) " // Adjust spacing
-                : "translateX(340px)", // Adjust spacing for the next item
+            width: underlineStyle.width,
+            left: underlineStyle.left,
           }}
         ></div>
       </nav>
       <div className='flex items-center '>
         <a
           href='#'
-          className='hover:opacity-100 opacity-50 text-2xl font-bold  mr-4 transition duration-300 ease-in-out'
+          data-section='about'
+          className={`hover:opacity-100 opacity-50 text-2xl font-bold mr-4 transition duration-300 ease-in-out ${
+            hovered === "about" ? "text-white" : ""
+          }`}
+          onMouseEnter={(e) => handleMouseEnter(e, "about")}
+          onMouseLeave={handleMouseLeave}
         >
           About Us
         </a>
-        <button aria-label='Search' className=' text-white mr-4'>
+        <button aria-label='Search' className='text-white mr-4'>
           <HiSearch size={40} />
         </button>
         <a href='#' className='text-white urdu_text mr-4'>

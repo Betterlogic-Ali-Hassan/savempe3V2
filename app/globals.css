@@ -82,3 +82,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.header {
+  --offset: 620px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 24px;
+  left: 0;
+  transform: translateX(var(--offset)); /* Use the CSS variable */
+  width: 90px;
+  height: 4px;
+  background-color: white;
+  z-index: 1;
+}
+
+.item2:hover .header::before {
+  --offset: 800px; /* Update the variable on hover */
+}
