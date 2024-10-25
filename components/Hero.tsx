@@ -10,7 +10,6 @@ const Hero = () => {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-
   return (
     <div className=' pb-[90px] pt-[40px]'>
       <div className=' flex flex-col items-center justify-center px-6'>
