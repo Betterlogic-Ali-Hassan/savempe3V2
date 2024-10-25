@@ -22,7 +22,7 @@ const Hero = () => {
             the most common queries we receive in one place
           </p>
         </div>
-        <div className='bg-white max-w-[1248px] h-[100px] min-[1440px]:h-[114px] flex items-center w-full border border-[#c4c4c4] px-6 py-3 rounded-[20px]  '>
+        <div className='bg-white max-w-[1248px] h-[100px] min-[1440px]:h-[114px] flex items-center w-full border border-[#c4c4c4] px-6 py-3 rounded-[20px]'>
           <HiSearch size={48} className='mr-6 text-[#384048]' />
           <Input
             className='bg-transparent border-none outline-none shadow-none min-[1440px]:text-[32px] text-2xl font-normal h-full '
