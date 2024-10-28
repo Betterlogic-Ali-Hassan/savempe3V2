@@ -5,7 +5,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffe9ec;
+  /* background-color: #ffe9ec; */
 }
 .urdu_text {
   font-family: "Vazirmatn";
@@ -81,4 +81,14 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+.item-grid {
+  display: grid;
+  grid: repeat(3, 1fr) / auto-flow;
+  height: 100%;
+  padding: 0;
+  row-gap: 30px;
+}
+.paragraph {
+  max-width: min(210px, 14.5vw);
 }

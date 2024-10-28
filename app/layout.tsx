@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Cabin } from "next/font/google";
+import { Wix_Madefor_Display as Wix } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+// import { Cabin } from "next/font/google";
 
-const cabin = Cabin({
+// const cabin = Cabin({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+// });
+const wix = Wix({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -19,7 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${cabin.className} antialiased`}>{children}</body>
+      <body
+        className={`${wix.className} antialiased min-h-screen flex flex-col`}
+      >
+        <Navbar />
+        <main className='flex-grow bg-[#f2f2f2]'>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
