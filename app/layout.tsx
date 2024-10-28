@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${wix.className} antialiased min-h-screen flex flex-col`}
+        className={`${wix.className} antialiased min-h-screen flex flex-col bg-[#f2f2f2]`}
       >
         <Navbar />
-        <main className='flex-grow bg-[#f2f2f2]'>{children}</main>
+        <main className='flex-grow mb-[100px]'>{children}</main>
         <Footer />
       </body>
     </html>

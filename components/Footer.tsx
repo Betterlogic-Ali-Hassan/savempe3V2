@@ -84,7 +84,7 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className='bg-background text-foreground  '>
+    <footer className='bg-background text-foreground mt-[100px]  '>
       <nav className='flex items-center flex-col'>
         <div className='min-[1366px]:w-[1248px] gap-[66px] flex  py-[54px] '>
           <div className='flex w-full justify-between'>
