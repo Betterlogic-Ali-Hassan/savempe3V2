@@ -42,7 +42,7 @@ const MobileNav = () => {
             Enterprise
           </Link>
           <Languages mobile />
-          <div className='flex gap-4 px-[4vw] mt-auto border-t'>
+          <div className='flex gap-4 px-[4vw] min-[400px]:mt-auto mt-2  min-[400px]:border-t'>
             <Link
               href='#'
               className='border border-black py-2 px-[30px] rounded-full mt-4 hover:bg-[#f2f2f2]'
