@@ -11,7 +11,7 @@ import {
 const LanguagesSelect = () => {
   return (
     <Select>
-      <SelectTrigger className='outline-none py-5 px-[4vw] w-full  overflow-y-auto  shadow-none'>
+      <SelectTrigger className='outline-none py-5 px-[4vw] w-full    shadow-none'>
         <div className='flex items-center gap-3'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

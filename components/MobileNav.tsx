@@ -13,13 +13,13 @@ import { X } from "lucide-react";
 import Languages from "./Languages";
 const MobileNav = () => {
   return (
-    <div className=' xl:hidden'>
+    <div className=' xl:hidden '>
       <Dialog>
         <DialogTrigger>
           <SlMenu size={22} />
         </DialogTrigger>
         <DialogContent
-          className='h-screen min-w-full inline-flex flex-col pt-0 px-0 gap-0'
+          className='h-screen min-w-full inline-flex flex-col px-0 gap-0 pt-0 max-[400px] py-5'
           style={{ zIndex: "1100" }}
         >
           <div className='border-b px-5 h-[72px] flex w-full items-center justify-between'>
