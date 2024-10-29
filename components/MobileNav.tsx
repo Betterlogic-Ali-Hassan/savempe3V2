@@ -11,6 +11,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { X } from "lucide-react";
 import Languages from "./Languages";
+import Btn from "./Btn";
 const MobileNav = () => {
   return (
     <div className=' xl:hidden '>
@@ -49,12 +50,7 @@ const MobileNav = () => {
             >
               Log In
             </Link>
-            <Link
-              href='#'
-              className='bg-[#166aea] py-2 px-[30px] rounded-full text-white mt-4 hover:bg-[#2D83FF]'
-            >
-              Get Started
-            </Link>
+            <Btn />
           </div>
         </DialogContent>
       </Dialog>

@@ -4,6 +4,7 @@ import MenuItem from "./MenuItem";
 import Languages from "./Languages";
 import Logo from "./Logo";
 import MobileNav from "./MobileNav";
+import Btn from "./Btn";
 
 const Navbar = () => {
   return (
@@ -53,14 +54,12 @@ const Navbar = () => {
         >
           Login
         </Link>
-        <Link
-          href='#'
-          className='bg-[#166aea] py-2 px-[30px] rounded-full text-white hover:bg-[#2D83FF]'
-        >
-          Get Started
-        </Link>
+        <Btn />
       </div>
-      <MobileNav />
+      <div className='flex items-center gap-4'>
+        <Btn className='py-1 px-4 sm:hidden text-sm' />
+        <MobileNav />
+      </div>
     </header>
   );
 };
