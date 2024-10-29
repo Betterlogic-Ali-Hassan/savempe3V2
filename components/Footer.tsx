@@ -1,4 +1,3 @@
-import { socialIcons } from "@/constant/SocialIconData";
 import Link from "next/link";
 import FooterLinks from "./FooterLinks";
 import FooterAccordion from "./FooterAccordion";
