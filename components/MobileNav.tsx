@@ -1,11 +1,16 @@
 import React from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { SlMenu } from "react-icons/sl";
 import MobileNavMenu from "./MobileNavMenu";
 import Link from "next/link";
+import Logo from "./Logo";
+import { X } from "lucide-react";
 import Languages from "./Languages";
-import { Button } from "./ui/button";
-
 const MobileNav = () => {
   return (
     <div className=' xl:hidden'>
@@ -14,9 +19,15 @@ const MobileNav = () => {
           <SlMenu size={22} />
         </DialogTrigger>
         <DialogContent
-          className='h-screen min-w-full inline-flex flex-col px-0 gap-0'
+          className='h-screen min-w-full inline-flex flex-col pt-0 px-0 gap-0'
           style={{ zIndex: "1100" }}
         >
+          <div className='border-b px-5 h-[72px] flex w-full items-center justify-between'>
+            <Logo />
+            <DialogClose>
+              <X size={24} />
+            </DialogClose>
+          </div>
           <MobileNavMenu />
           <Link href='#' className=' py-5 px-[4vw] w-full'>
             Pricing
@@ -30,9 +41,7 @@ const MobileNav = () => {
           <Link href='#' className=' py-5 px-[4vw] w-full border-b '>
             Enterprise
           </Link>
-          <Link href='#' className=' py-5 px-[4vw] w-full border-b '>
-            English
-          </Link>
+          <Languages mobile />
           <div className='flex gap-4 px-[4vw] mt-auto border-t'>
             <Link
               href='#'
