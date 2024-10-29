@@ -56,7 +56,7 @@ const Navbar = () => {
         </Link>
         <Btn />
       </div>
-      <div className='flex items-center gap-4'>
+      <div className='flex items-center gap-4 xl:hidden'>
         <Btn className='py-1 px-4 sm:hidden text-sm' />
         <MobileNav />
       </div>
