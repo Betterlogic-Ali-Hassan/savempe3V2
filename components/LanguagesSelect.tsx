@@ -49,7 +49,7 @@ const LanguagesSelect = () => {
       </SelectTrigger>
       <SelectContent style={{ zIndex: 1300 }}>
         {languages.map((language, i) => (
-          <SelectItem value={language} key={i}>
+          <SelectItem value={language} key={i} className='font-medium'>
             {language}
           </SelectItem>
         ))}
