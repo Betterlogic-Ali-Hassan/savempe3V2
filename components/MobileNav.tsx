@@ -50,7 +50,7 @@ const MobileNav = () => {
             >
               Log In
             </Link>
-            <Btn />
+            <Btn className='mt-4' />
           </div>
         </DialogContent>
       </Dialog>
