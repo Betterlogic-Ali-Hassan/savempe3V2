@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className='bg-background text-foreground mt-[100px]'>
       <nav className='flex items-center flex-col'>
-        <div className='min-[1366px]:w-[1248px] xl:w-[1184px] xl:gap-[48px]  max-xl:flex-col  min-[1366px]:gap-[66px] flex  py-[54px] max-[1279px]:w-[647px] max-[750px]:w-full max-[750px]:py-[48px] max-[750px]:px-[30px] '>
+        <div className='min-[1366px]:w-[1248px] xl:w-[1184px] xl:gap-[48px] max-xl:flex-col  min-[1366px]:gap-[66px] flex  py-[54px] max-[1279px]:w-[647px] max-[750px]:w-full max-[750px]:py-[48px] max-[750px]:px-[30px] '>
           <FooterLinks />
           <FooterAccordion />
           <div className='xl:max-w-[224px] w-full'>
