@@ -23,7 +23,7 @@ const MobileNav = () => {
           className='h-screen min-w-full inline-flex flex-col px-0 gap-0 pt-0 max-[400px]:py-5 overflow-y-auto'
           style={{ zIndex: "1100" }}
         >
-          <div className='border-b px-5 h-[72px] pb-2 flex w-full items-center justify-between'>
+          <div className='border-b px-5 min-h-[72px] pb-2 flex w-full items-center justify-between'>
             <Logo />
             <DialogClose>
               <X size={24} />
