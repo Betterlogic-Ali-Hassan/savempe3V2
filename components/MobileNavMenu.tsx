@@ -12,12 +12,12 @@ const MobileNavMenu = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className='w-full'>
+    <div className='w-full '>
       {menuData.map((item, index) => (
         <div key={index}>
           <div
             className={cn(
-              " flex items-center justify-between w-full py-5 px-[4vw]",
+              " flex items-center justify-between w-full py-5 px-[4vw] max-sm:text-sm",
               openIndex === index && "font-bold"
             )}
             onClick={() => handleToggle(index)}
@@ -28,11 +28,11 @@ const MobileNavMenu = () => {
           {openIndex === index && (
             <div className=' mt-2'>
               <MenuLinks item={item} mobile />
-              <div className='w-full bg-[#F7F7FD] pt-[30px] px-[4vw] pb-[40px] '>
+              <div className='w-full bg-[#F7F7FD] pt-[30px] px-[4vw] pb-[40px]'>
                 <div className='border-b pb-[15px] text-[13px] uppercase text-[#5e5e5e] font-normal'>
                   <h4>ESSENTIALS</h4>
                 </div>
-                <div className='mt-[30px]  flex items-center gap-[30px] '>
+                <div className='mt-[30px]  flex sm:items-center gap-[30px] max-sm:flex-col '>
                   {item.categories[0].items.map((category, itemIndex) => (
                     <div key={itemIndex}>
                       <Link href='#' className='group flex flex-col gap-3'>

@@ -12,12 +12,12 @@ const LanguagesSelect = () => {
   return (
     <Select>
       <SelectTrigger className='outline-none py-5 px-[4vw] w-full    shadow-none'>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center gap-3 max-sm:text-sm'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             xmlnsXlink='http://www.w3.org/1999/xlink'
-            height={22}
-            width={22}
+            height={20}
+            width={20}
             fill='currentColor'
             viewBox='0 0 512 512'
           >

@@ -25,7 +25,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ item, mobile }) => {
     <div
       className={cn(
         "flex  px-[4vw]  pt-[32px] pb-[120px] h-full",
-        mobile && "pb-[60px]"
+        mobile && "pb-[60px] flex-col pt-2 "
       )}
       style={{ width: mobile ? "100%" : "calc(100% - 35vw)" }}
     >
@@ -39,7 +39,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ item, mobile }) => {
           >
             <h4>{category.title}</h4>
           </div>
-          <div className='mt-[30px] item-grid pr-[30px]'>
+          <div className='mt-[30px] item-grid  pr-[30px]'>
             {category.items.map((item, itemIndex) => (
               <Link
                 href='#'
@@ -60,6 +60,9 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ item, mobile }) => {
                     "text-base text-[#5e5e5e] leading-[24px] font-normal paragraph",
                     mobile && "text-xs"
                   )}
+                  style={{
+                    maxWidth: mobile ? "100%" : "min(210px, 14.5vw)",
+                  }}
                 >
                   {item.des}
                 </p>

@@ -89,6 +89,3 @@ body {
   padding: 0;
   row-gap: 30px;
 }
-.paragraph {
-  max-width: min(210px, 14.5vw);
-}
