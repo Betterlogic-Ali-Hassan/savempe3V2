@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${wix.className} antialiased min-h-screen flex flex-col  `}
       >
         <Navbar />
-        <main className='flex-grow  text-white'>{children}</main>
+        <main className='flex-grow mb-[100px]  text-white'>{children}</main>
         <Footer />
       </body>
     </html>
