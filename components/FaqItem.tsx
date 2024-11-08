@@ -29,13 +29,13 @@ const FaqItem = ({
         onClick={onToggle}
       >
         <div className='mt-4'>
-          <h2 className='text-lg font-semibold mb-2'>{question}</h2>
+          <h2 className='text-xl font-semibold mb-2'>{question}</h2>
           <div
             className={`transition-all duration-500 ease-in-out overflow-hidden ${
               isOpen ? "max-h-[200px] opacity-100 pt-1" : "max-h-0 opacity-0"
             }`}
           >
-            <div className='text-base font-normal'>{answer}</div>
+            <div className='text-lg font-normal'>{answer}</div>
           </div>
         </div>
 
