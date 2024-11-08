@@ -2,7 +2,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
-const Btn = ({ className }: { className?: string }) => {
+const Btn = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   return (
     <Link
       href='#'
@@ -11,7 +17,7 @@ const Btn = ({ className }: { className?: string }) => {
         className
       )}
     >
-      Get Started
+      {children || "Get Started"}
     </Link>
   );
 };
