@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Wix_Madefor_Display as Wix } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+
 // import { Cabin } from "next/font/google";
 
 // const cabin = Cabin({
@@ -29,9 +29,8 @@ export default function RootLayout({
       <body
         className={`${wix.className} antialiased min-h-screen flex flex-col  `}
       >
-        <Navbar />
-        <main className='flex-grow mb-[100px]  text-white'>{children}</main>
-        <Footer />
+        <Header />
+        <main className='flex-grow'>{children}</main>
       </body>
     </html>
   );

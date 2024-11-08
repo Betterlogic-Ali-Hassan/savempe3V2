@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "./ui/button";
-import Logo from "./Logo";
+
 import { HiSearch } from "react-icons/hi";
 import { MdOutlineLockPerson } from "react-icons/md";
+import Logo from "./Logo";
 
 const Header = () => {
   const [hovered, setHovered] = useState("personal"); // Active by default
