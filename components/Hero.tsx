@@ -11,7 +11,7 @@ const Hero = () => {
     setSearch(e.target.value);
   };
   return (
-    <section className=' pb-[90px] pt-[40px]'>
+    <section className=' pb-[90px] pt-[40px]   bg-[#ffe9ec]'>
       <div className=' flex flex-col items-center justify-center px-6'>
         <div className=' py-[55px] flex flex-col items-center justify-center'>
           <h1 className='min-[1440px]:text-[96px] text-[56px] font-bold text-[#D10210] pb-[7px] text-center leading-[110%] tracking-[-0.5px]'>

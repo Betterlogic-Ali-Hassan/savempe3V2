@@ -7,35 +7,25 @@ interface Props {
   answer: string;
   isOpen: boolean;
   onToggle: () => void;
-  index: number;
-  totalItem: number;
 }
 
-const FaqItem = ({
-  question,
-  answer,
-  index,
-  totalItem,
-  onToggle,
-  isOpen,
-}: Props) => {
+const FaqItem = ({ question, answer, onToggle, isOpen }: Props) => {
   return (
     <>
       <div
         className={cn(
-          "flex items-center justify-between gap-4 border-b border-black cursor-pointer text-black px-5 py-6",
-          index === totalItem - 1 && "border-b-0"
+          "flex items-center justify-between gap-4 border rounded-[20px] border-black cursor-pointer text-black px-6 py-[30px]"
         )}
         onClick={onToggle}
       >
         <div className='mt-4'>
-          <h2 className='text-xl font-semibold mb-2'>{question}</h2>
+          <h2 className=' font-semibold mb-2 text-2xl'>{question}</h2>
           <div
             className={`transition-all duration-500 ease-in-out overflow-hidden ${
               isOpen ? "max-h-[200px] opacity-100 pt-1" : "max-h-0 opacity-0"
             }`}
           >
-            <div className='text-lg font-normal'>{answer}</div>
+            <div className='text-xl font-normal'>{answer}</div>
           </div>
         </div>
 
