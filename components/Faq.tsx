@@ -6,8 +6,8 @@ import { faqs } from "@/constant/faq";
 const Faqs = () => {
   const [openIndex, setOpenIndex] = useState<number | null>();
   return (
-    <section className='my-[100px] mx-auto max-w-[1200px] w-full px-4'>
-      <h2 className='text-black text-[48px] mb-4'>FAQs</h2>
+    <section className='my-[100px] mx-auto max-w-[1200px] w-full max-[1200px]:px-4'>
+      <h2 className=' font-semibold text-[48px] text-[#D10210]  mb-4'>FAQs</h2>
       <div className=' flex flex-col gap-8 '>
         {faqs.map((faq, index) => (
           <FaqItem

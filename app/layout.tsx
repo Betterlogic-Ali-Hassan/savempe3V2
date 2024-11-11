@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Wix_Madefor_Display as Wix } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // import { Cabin } from "next/font/google";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Header />
         <main className='flex-grow'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
