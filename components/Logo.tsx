@@ -24,7 +24,7 @@ const Logo = ({ footerLogo }: { footerLogo?: boolean }) => {
       </div>
       <span
         className={cn(
-          "text-sm font-semibold border-2 border-white p-2 rounded-full",
+          "text-sm font-semibold border-2 border-white p-2 rounded-full max-[1500px]:hidden",
           footerLogo && "hidden"
         )}
       >
