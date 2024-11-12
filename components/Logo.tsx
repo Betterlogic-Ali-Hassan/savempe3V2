@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 const Logo = ({ footerLogo }: { footerLogo?: boolean }) => {
   return (
     <div className='flex items-center gap-6'>
-      <div className='flex items-center gap-2'>
+      <Link href='/' className='flex items-center gap-2'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           xmlSpace='preserve'
@@ -19,7 +20,7 @@ const Logo = ({ footerLogo }: { footerLogo?: boolean }) => {
         <span className='uppercase text-xl text-[white]'>
           Save <strong>MP3</strong>
         </span>
-      </div>
+      </Link>
       <span
         className={cn(
           "text-sm font-semibold border-2 border-white p-2 rounded-full max-[1500px]:hidden",
